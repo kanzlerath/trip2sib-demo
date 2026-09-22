@@ -12,53 +12,51 @@
   <iframe src="./Коробок.html" title="Trip2Sib" scrolling="no"></iframe>
 </div>
 
-<main class="wrap">
-  <div class="crumbs-demo">
-    <a href="./index.html">Главная</a><span><a href="./index.html">Где поесть</a></span><span><a href="./restaurant.html">Коробок</a></span><span>Заказ еды</span>
-  </div>
-
-  <section class="restaurant-head">
-    <div class="restaurant-head__copy">
+<main class="order-page">
+  <section class="order-top">
+    <div class="order-top__main">
       <h1>Коробок</h1>
-      <div class="restaurant-head__sub">Гастро-бар · Новосибирск, ул. Чаплыгина, 28</div>
-      <div class="restaurant-head__facts">
-        <div class="fact"><b>~35–50 мин</b><small>ориентир по времени</small></div>
-        <div class="fact"><b>от 1 000 ₽</b><small>минимальный заказ</small></div>
-        <div class="fact"><b>до 24:00</b><small>принимаем заказы</small></div>
-      </div>
-      <div class="order-switch">
-        <button class="active" data-mode="delivery">Доставка</button>
-        <button data-mode="pickup">Самовывоз</button>
+      <div class="order-top__meta">
+        <span>до 24:00</span>
+        <span>~35 мин</span>
       </div>
     </div>
-    <div class="restaurant-head__photo" aria-label="Коробок"></div>
+    <div class="order-top__actions">
+      <button class="mode active" data-mode="delivery">Доставка</button>
+      <button class="mode" data-mode="pickup">Самовывоз</button>
+    </div>
   </section>
 
-  <div class="category-bar">
-    <button class="active" data-cat="popular">Популярное</button>
+  <div class="address-row">
+    <span class="address-row__label">Адрес</span>
+    <button class="address-row__value">Новосибирск, ул. Чаплыгина, 28</button>
+  </div>
+
+  <nav class="category-nav">
+    <button class="active" data-cat="all">Все</button>
     <button data-cat="snacks">Закуски</button>
     <button data-cat="soups">Супы</button>
     <button data-cat="hot">Горячее</button>
     <button data-cat="desserts">Десерты</button>
     <button data-cat="drinks">Напитки</button>
-  </div>
+  </nav>
 
-  <div class="order-layout">
-    <section>
-      <div class="menu-title"><h2>Популярное</h2><span class="menu-count"></span></div>
+  <div class="order-content">
+    <section class="menu-section">
       <div class="menu-grid"></div>
     </section>
 
     <aside class="cart">
-      <div class="cart__head"><h2>Корзина</h2><span class="cart__count">0</span></div>
+      <div class="cart__head">
+        <h2>Корзина</h2>
+        <span class="cart__count">0</span>
+      </div>
       <div class="cart-items"></div>
-      <div class="min-order">Минимальный заказ — 1 000 ₽</div>
       <div class="summary">
-        <div><span>Сумма блюд</span><strong class="subtotal">0 ₽</strong></div>
-        <div><span>Доставка</span><strong>Бесплатно</strong></div>
+        <div><span>Сумма</span><strong class="subtotal">0 ₽</strong></div>
         <div class="total"><span>Итого</span><span class="total-value">0 ₽</span></div>
       </div>
-      <button class="checkout" disabled>Оформить заказ →</button>
+      <button class="checkout" disabled>Оформить заказ</button>
     </aside>
   </div>
 </main>
