@@ -1,0 +1,466 @@
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.filter-group {
+    position: relative;
+}
+
+/* Стили для выпадающих фильтров */
+.dropdown-filter {
+    min-width: 180px;
+}
+
+.dropdown-toggle {
+    /*display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    min-width: 150px;*/
+	color: #0A3045;
+    background-color: #FFFFFF;
+    padding: 13px 15px 13px 15px;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #D2D2D2;
+    border-radius: 15px 15px 15px 15px;
+	cursor: pointer;
+	    justify-content: space-between;
+    display: flex;
+	width:260px;
+;
+}
+/*
+.dropdown-toggle:hover {
+    border-color: #007bff;
+    background: #f8f9ff;
+}
+
+.dropdown-toggle.active {
+    border-color: #007bff;
+    background: #f8f9ff;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.dropdown-toggle.has-selection {
+    border-color: #28a745;
+    background: #f8fff9;
+}
+*/
+.dropdown-label {
+    color: #333;
+    font-size: 14px;
+}
+
+.dropdown-arrow {
+    color: #6c757d;
+    transition: transform 0.3s ease;
+    font-size: 10px;
+    margin-left: 8px;
+}
+
+.dropdown-toggle.active .dropdown-arrow {
+    transform: rotate(180deg);
+    color: #007bff;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 0px solid #007bff;
+    border-top: none;
+    border-radius: 0 0 6px 6px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dropdown-filter.active .dropdown-content {
+    display: block;
+    animation: dropdownAppear 0.2s ease;
+}
+
+@keyframes dropdownAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdown-checkbox-label {
+    display: flex;
+    align-items: center;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid #f1f1f1;
+    margin: 0;
+}
+
+.dropdown-checkbox-label:hover {
+    background: #f8f9fa;
+}
+
+.dropdown-checkbox-label:last-child {
+    border-bottom: none;
+}
+
+/* Стили для простых чекбоксов */
+.simple-checkbox-label {
+    /*display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background: white;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    user-select: none;
+    min-width: 150px;*/
+	color: #0A3045;
+    background-color: #FFFFFF;
+    padding: 13px 15px 13px 15px;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: #D2D2D2;
+    border-radius: 15px 15px 15px 15px;
+	cursor: pointer;
+	display: flex;
+    align-items: center;
+	min-width:260px;
+}
+/*
+.simple-checkbox-label:hover {
+    border-color: #007bff;
+    background: #f8f9ff;
+}
+*/
+.simple-checkbox-label input:checked + .checkbox-text {
+    color: #007bff;
+    font-weight: 600;
+}
+
+/* Общие стили для чекбоксов */
+.filter-checkbox {
+    margin-right: 10px;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.checkbox-text {
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Стили для кнопок */
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-size: 14px;
+	height:46px;
+	    border-radius: 15px 15px 15px 15px;
+}
+
+.filter-btn:first-child {
+    background: #023F56E6;
+    color: white;
+}
+/*
+.filter-btn:first-child:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+*/
+.filter-btn--secondary {
+    background: #fff;
+    color: #6c757d;
+	border:2px solid #6c757d;
+}
+/*
+.filter-btn--secondary:hover {
+    background: #545b62;
+    transform: translateY(-1px);
+}
+*/
+/* Счетчик результатов */
+.results-counter {
+    margin: 15px 0;
+    font-weight: bold;
+    color: #007bff;
+    font-size: 16px;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+	display:none;
+}
+.filter__mob{
+	display:none;
+	color: #023F56;
+    background-color: #FFFFFF;
+    border:2px solid #023F56;
+    border-radius: 15px 15px 15px 15px;
+	padding: 10px 20px;
+}
+
+/* Адаптивность */
+@media only screen and (min-width: 1240px) and (max-width: 1400px) {
+   .dropdown-toggle{
+	   max-width:260px;
+	   width:auto;
+   }
+   .simple-checkbox-label{
+	   max-width:260px;
+	   min-width:auto;
+	   width:auto;
+   }
+}
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+		position:fixed;
+		left:0;
+		bottom:-100%;
+		transition: all 0.5s ease;
+		    z-index: 999;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .dropdown-toggle,
+    .simple-checkbox-label {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .filter-buttons {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+        flex: 1;
+        min-width: 100%;
+    }
+	.filter__mob{
+		display:flex;
+	}
+	.filter-container-open{
+		position:fixed;
+		bottom:0;
+		width:100%;
+		height:auto;
+		background:#fff;
+		border-radius:15px 15px 0 0;
+		padding: 20px;
+		display:flex;
+		transition: all 0.5s ease;
+	}
+	.panel-open{
+		background:#000;
+		opacity:0.5;
+		position:fixed;
+		top:0;
+		left:0;
+		width:100%;
+		height:100vh;
+		transition: all 0.5s ease;
+			z-index: 10;
+	}
+}
+
+/* Специальные стили для всегда видимых опций округа и удаленности */
+#dropdown-okrug .dropdown-checkbox-label,
+#dropdown-udalennost .dropdown-checkbox-label {
+    display: flex !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Подсветка выбранных опций в выпадающих списках */
+#dropdown-okrug input:checked + .checkbox-text,
+#dropdown-udalennost input:checked + .checkbox-text,
+#dropdown-kukhnya input:checked + .checkbox-text {
+    /*color: #007bff;
+    font-weight: 600;*/
+}
+
+/* Состояние наведения для всех интерактивных элементов */
+.dropdown-toggle:focus,
+.simple-checkbox-label:focus,
+.filter-btn:focus {
+    /*outline: 2px solid #007bff;
+    outline-offset: 2px;*/
+}
+
+/* Анимация для плавного появления/скрытия элементов */
+.link__list-el {
+    transition: all 0.3s ease;
+}
+
+.link__list-el.hidden {
+    opacity: 0;
+    transform: translateY(10px);
+    height: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Стили для скрытых фильтров */
+.filter-group[style*="display: none"] {
+    display: none !important;
+}
+
+.dropdown-checkbox-label[style*="display: none"],
+.simple-checkbox-label[style*="display: none"] {
+    display: none !important;
+}
+
+/* Кастомные чекбоксы */
+.filter-checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ddd;
+    border-radius: 3px;
+    background: white;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-checkbox:checked {
+    background: #023F56E6;
+    border-color: #023F56E6;
+}
+
+.filter-checkbox:checked::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.filter-checkbox:hover {
+    border-color: #007bff;
+}
+
+/* Плавные переходы для скрытия/показа фильтров */
+.filter-group {
+    transition: all 0.3s ease;
+}
+
+.filter-group[style*="display: none"] {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    transform: scale(0.95);
+}
+
+.dropdown-checkbox-label {
+    transition: all 0.2s ease;
+}
+
+.dropdown-checkbox-label[style*="display: none"] {
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    transform: translateX(-10px);
+}
+
+/* Плавное появление/скрытие элементов каталога */
+.link__list-el {
+    transition: all 0.3s ease;
+}
+
+.link__list-el[style*="display: none"] {
+    opacity: 0;
+    transform: translateY(-10px);
+    height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Индикатор для dropdown с не примененными изменениями */
+.dropdown-toggle.has-pending {
+    border-color: #ffc107;
+    background: #fffbf0;
+}
+
+.dropdown-toggle.has-pending .dropdown-label {
+    color: #856404;
+}
+
+/* Плавные переходы */
+.dropdown-toggle {
+    transition: all 0.3s ease;
+}
+
+.filter-group {
+    transition: all 0.3s ease;
+}
+
+/* Стили для состояний */
+.dropdown-content {
+    z-index: 1000; /* Убедимся что dropdown поверх других элементов */
+}
+
+/* Анимация применения фильтров */
+@keyframes filterApplied {
+    0% { background-color: #fffbf0; }
+    100% { background-color: white; }
+}
+
+.dropdown-toggle.filter-applied {
+    animation: filterApplied 1s ease;
+}
