@@ -34,7 +34,6 @@
         margin:18px 0 55px;background:#f1f5f3;border-left:4px solid #4D8A7A;
         display:grid;grid-template-columns:1.45fr .55fr;gap:36px;padding:32px 36px;align-items:center
       }
-      .demo-delivery__eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#4D8A7A;font-weight:700;margin-bottom:7px}
       .demo-delivery h2{font-size:32px;line-height:1.12;color:#023F56;margin:0 0 10px;font-family:'font3','Trebuchet MS',sans-serif}
       .demo-delivery p{font-size:16px;line-height:1.5;margin:0;color:#315f6e}
       .demo-delivery__meta{display:flex;gap:28px;margin-top:20px;flex-wrap:wrap}
@@ -46,7 +45,6 @@
         display:flex;align-items:center;justify-content:center;padding:14px 18px;
         background:#4D8A7A;color:#fff!important;text-decoration:none!important;font-weight:700
       }
-      .demo-delivery__note{text-align:center;font-size:12px;color:#7a8e95}
       @media(max-width:800px){
         .demo-delivery{grid-template-columns:1fr;padding:24px 20px}
         .demo-delivery h2{font-size:26px}
@@ -85,14 +83,12 @@
       const delivery=doc.createElement('div');
       delivery.className='demo-delivery';
       delivery.innerHTML=
-        '<div><div class="demo-delivery__eyebrow">Новое в путеводителе</div>'+
-        '<h2>Закажите блюда из «Коробка»</h2>'+
+        '<div><h2>Закажите блюда из «Коробка»</h2>'+
         '<p>Выбирайте блюда прямо на Trip2Sib. Меню, корзина и оформление заказа — без перехода на внешний сервис.</p>'+
         '<div class="demo-delivery__meta"><span><b>~35–50 мин</b><small>ориентир по времени</small></span>'+
         '<span><b>от 1 000 ₽</b><small>минимальный заказ</small></span>'+
         '<span><b>Доставка / самовывоз</b><small>два сценария</small></span></div></div>'+
-        '<div class="demo-delivery__actions"><a class="demo-delivery__cta" href="./order.html" target="_top">Смотреть меню и заказать →</a>'+
-        '<div class="demo-delivery__note">Демонстрационный сценарий Trip2Sib × Restomania</div></div>';
+        '<div class="demo-delivery__actions"><a class="demo-delivery__cta" href="./order.html" target="_top">Смотреть меню и заказать →</a></div>';
       container.appendChild(delivery);
     }
   });
