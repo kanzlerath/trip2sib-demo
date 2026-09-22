@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Коробок — Trip2Sib</title>
+  <style>
+    html,body{margin:0;height:100%;background:#fff}
+    iframe{display:block;width:100%;height:100vh;border:0}
+  </style>
+</head>
+<body>
+  <iframe id="restaurant" src="./Коробок.html" title="Коробок"></iframe>
+  <script>
+  const frame=document.getElementById('restaurant');
+
+  frame.addEventListener('load',()=>{
+    const doc=frame.contentDocument;
+    if(!doc) return;
+
+    const style=doc.createElement('style');
+    style.textContent=`
+      .demo-order-btn{
+        display:flex!important;align-items:center;justify-content:center;gap:10px;
+        padding:14px 18px!important;margin:0 0 14px;background:#4D8A7A!important;
+        color:#fff!important;text-decoration:none!important;font-weight:700;
+        transition:.2s ease;border:1px solid #4D8A7A
+      }
+      .demo-order-btn:hover{background:#023F56!important;border-color:#023F56}
+      .demo-order-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}
+      .demo-tags{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}
+      .demo-tags span{padding:7px 11px;border:1px solid rgba(2,63,86,.2);font-size:13px}
+      .demo-delivery{
+        margin:18px 0 55px;background:#f1f5f3;border-left:4px solid #4D8A7A;
+        display:grid;grid-template-columns:1.45fr .55fr;gap:36px;padding:32px 36px;align-items:center
+      }
+      .demo-delivery__eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:.08em;color:#4D8A7A;font-weight:700;margin-bottom:7px}
+      .demo-delivery h2{font-size:32px;line-height:1.12;color:#023F56;margin:0 0 10px;font-family:'font3','Trebuchet MS',sans-serif}
+      .demo-delivery p{font-size:16px;line-height:1.5;margin:0;color:#315f6e}
+      .demo-delivery__meta{display:flex;gap:28px;margin-top:20px;flex-wrap:wrap}
+      .demo-delivery__meta span{display:flex;flex-direction:column}
+      .demo-delivery__meta b{font-size:17px;color:#023F56}
+      .demo-delivery__meta small{font-size:12px;color:#6f858d;margin-top:2px}
+      .demo-delivery__actions{display:flex;flex-direction:column;gap:10px}
+      .demo-delivery__cta{
+        display:flex;align-items:center;justify-content:center;padding:14px 18px;
+        background:#4D8A7A;color:#fff!important;text-decoration:none!important;font-weight:700
+      }
+      .demo-delivery__note{text-align:center;font-size:12px;color:#7a8e95}
+      @media(max-width:800px){
+        .demo-delivery{grid-template-columns:1fr;padding:24px 20px}
+        .demo-delivery h2{font-size:26px}
+      }
+    `;
+    doc.head.appendChild(style);
+
+    const crumbs=[...doc.querySelectorAll('.crumbs a')];
+    if(crumbs[0]){crumbs[0].href='./index.html';crumbs[0].target='_top'}
+    if(crumbs[1]){crumbs[1].href='./index.html';crumbs[1].target='_top'}
+    const lastCrumb=crumbs[crumbs.length-1];
+    if(lastCrumb){lastCrumb.href='./restaurant.html';lastCrumb.target='_top'}
+
+    const text=doc.querySelector('.put__text');
+    if(text){
+      text.innerHTML=
+        'Гастро-бар «Коробок» расположен в историческом здании в тихом центре Новосибирска. '+
+        'Здесь соединяются современная европейская кухня, спокойная атмосфера и продуманная барная карта.'+
+        '<br><br>Подойдёт для завтрака, ужина или встречи с друзьями. А блюда из меню теперь можно заказать домой или забрать самостоятельно.'+
+        '<br><br><b>Режим работы:</b> ежедневно с 09:00 до 24:00'+
+        '<div class="demo-tags"><span>Европейская кухня</span><span>Завтраки</span><span>Бар</span><span>Центр города</span></div>';
+    }
+
+    const info=doc.querySelector('.put__ssilk');
+    if(info){
+      const order=doc.createElement('a');
+      order.className='put__ssilk-el demo-order-btn';
+      order.href='./order.html';
+      order.target='_top';
+      order.innerHTML='<svg viewBox="0 0 24 24"><path d="M6 3v8M10 3v8M8 3v18M15 3v7c0 2 1.5 3 3 3v8M18 3v10"/></svg><span>Заказать еду</span>';
+      info.prepend(order);
+    }
+
+    const container=doc.querySelector('section .container');
+    if(container){
+      const delivery=doc.createElement('div');
+      delivery.className='demo-delivery';
+      delivery.innerHTML=
+        '<div><div class="demo-delivery__eyebrow">Новое в путеводителе</div>'+
+        '<h2>Закажите блюда из «Коробка»</h2>'+
+        '<p>Выбирайте блюда прямо на Trip2Sib. Меню, корзина и оформление заказа — без перехода на внешний сервис.</p>'+
+        '<div class="demo-delivery__meta"><span><b>~35–50 мин</b><small>ориентир по времени</small></span>'+
+        '<span><b>от 1 000 ₽</b><small>минимальный заказ</small></span>'+
+        '<span><b>Доставка / самовывоз</b><small>два сценария</small></span></div></div>'+
+        '<div class="demo-delivery__actions"><a class="demo-delivery__cta" href="./order.html" target="_top">Смотреть меню и заказать →</a>'+
+        '<div class="demo-delivery__note">Демонстрационный сценарий Trip2Sib × Restomania</div></div>';
+      container.appendChild(delivery);
+    }
+  });
+  </script>
+</body>
+</html>
