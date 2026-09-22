@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Коробок — заказать еду | Trip2Sib</title>
+  <link rel="stylesheet" href="./Коробок_files/fonts.css">
+  <link rel="stylesheet" href="./order.css">
+</head>
+<body>
+<header class="order-header">
+  <div class="order-header__inner">
+    <a href="./index.html"><img src="./Коробок_files/logo.png" alt="Новосибирская область. Сибирь здесь"></a>
+    <nav class="order-header__nav">
+      <a href="./index.html">Путеводитель</a>
+      <a href="./index.html" class="active">Где поесть</a>
+      <a href="./restaurant.html">Коробок</a>
+    </nav>
+    <div class="order-header__badge">Заказ еды</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="crumbs-demo">
+    <a href="./index.html">Главная</a><span><a href="./index.html">Где поесть</a></span><span><a href="./restaurant.html">Коробок</a></span><span>Заказ еды</span>
+  </div>
+
+  <section class="restaurant-head">
+    <div class="restaurant-head__copy">
+      <div class="restaurant-head__kicker">Ресторан из путеводителя Trip2Sib</div>
+      <h1>Коробок</h1>
+      <div class="restaurant-head__sub">Гастро-бар · Новосибирск, ул. Чаплыгина, 28</div>
+      <div class="restaurant-head__facts">
+        <div class="fact"><b>~35–50 мин</b><small>ориентир по времени</small></div>
+        <div class="fact"><b>от 1 000 ₽</b><small>минимальный заказ</small></div>
+        <div class="fact"><b>до 24:00</b><small>принимаем заказы</small></div>
+      </div>
+      <div class="order-switch">
+        <button class="active" data-mode="delivery">Доставка</button>
+        <button data-mode="pickup">Самовывоз</button>
+      </div>
+    </div>
+    <div class="restaurant-head__photo" aria-label="Коробок"></div>
+  </section>
+
+  <div class="category-bar">
+    <button class="active" data-cat="popular">Популярное</button>
+    <button data-cat="snacks">Закуски</button>
+    <button data-cat="soups">Супы</button>
+    <button data-cat="hot">Горячее</button>
+    <button data-cat="desserts">Десерты</button>
+    <button data-cat="drinks">Напитки</button>
+  </div>
+
+  <div class="order-layout">
+    <section>
+      <div class="menu-title"><h2>Популярное</h2><span class="menu-count"></span></div>
+      <div class="menu-grid"></div>
+    </section>
+
+    <aside class="cart">
+      <div class="cart__head"><h2>Корзина</h2><span class="cart__count">0</span></div>
+      <div class="cart-items"></div>
+      <div class="min-order">Минимальный заказ — 1 000 ₽</div>
+      <div class="summary">
+        <div><span>Сумма блюд</span><strong class="subtotal">0 ₽</strong></div>
+        <div><span>Доставка</span><strong>Бесплатно</strong></div>
+        <div class="total"><span>Итого</span><span class="total-value">0 ₽</span></div>
+      </div>
+      <button class="checkout" disabled>Оформить заказ →</button>
+      <div class="demo-note">Демонстрационная страница. На следующем этапе здесь подключается реальный checkout Restomania.</div>
+    </aside>
+  </div>
+</main>
+
+<div class="mobile-cart"><span>Корзина: <b class="mobile-count">0</b></span><strong class="mobile-total">0 ₽</strong><button>Открыть</button></div>
+<div class="toast" role="status"></div>
+<script src="./order.js"></script>
+</body>
+</html>

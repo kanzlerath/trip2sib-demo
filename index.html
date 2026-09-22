@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Trip2Sib — Где поесть</title>
+  <style>
+    html,body{margin:0;height:100%;background:#fff}
+    iframe{display:block;width:100%;height:100vh;border:0}
+  </style>
+</head>
+<body>
+  <iframe id="guide" src="./Путеводитель.html" title="Путеводитель Trip2Sib"></iframe>
+  <script>
+    const frame=document.getElementById('guide');
+    frame.addEventListener('load',()=>{
+      const doc=frame.contentDocument;
+      if(!doc) return;
+      const links=[...doc.querySelectorAll('a[href]')];
+      links.forEach(a=>{
+        if((a.getAttribute('href')||'').includes('/putevoditel/korobok/')){
+          a.href='./restaurant.html';
+          a.target='_top';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
