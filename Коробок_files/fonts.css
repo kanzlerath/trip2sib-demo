@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "font";
+    src: url('Roboto-Regular.woff2') format('woff2'),
+         url('Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "font2";
+    src: url('Roboto-Bold.woff2') format('woff2'),
+         url('Roboto-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "font3";
+    src: url('Roboto-Medium.woff2') format('woff2'),
+         url('Roboto-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "trebuchetms";
+    src: url('trebuchetms.woff2') format('woff2'),
+         url('trebuchetms.ttf') format('truetype');
+    font-display: swap;
+}
